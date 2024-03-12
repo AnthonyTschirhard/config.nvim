@@ -3,3 +3,5 @@ require 'kickstart.map'
 require 'kickstart.opt'
 require 'kickstart.autocmd'
 require 'kickstart.lazy'
+
+require 'plugins.telescope'
