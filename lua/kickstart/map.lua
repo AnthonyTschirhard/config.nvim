@@ -31,11 +31,24 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-A-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-A-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-A-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-A-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Navigation
-vim.keymap.set({ 'n', 'v' }, '<A-j>', 'b')
-vim.keymap.set({ 'n', 'v' }, '<A-k>', 'w')
+vim.keymap.set({ 'n', 'v' }, '<A-j>', 'b', { desc = 'Backward one word' })
+vim.keymap.set({ 'n', 'v' }, '<A-k>', 'w', { desc = 'Forward one word' })
+vim.keymap.set({ 'i' }, '<A-j>', '<Esc>Bi', { desc = 'Forward one word' })
+vim.keymap.set({ 'i' }, '<A-k>', '<ESC><Space>Wi', { desc = 'Forward one word' })
+vim.keymap.set({ 'n', 'v' }, '<C-k>', '30k', { desc = 'Page up' })
+vim.keymap.set({ 'n', 'v' }, '<C-j>', '30j', { desc = 'Page down' })
+
+-- split windows
+vim.keymap.set("n", "<leader>vs", ":vs<CR>")
+vim.keymap.set("n", "<leader>hs", ":split<CR>")
+
+-- text edition
+vim.keymap.set("n", "yY", ":%y+<CR>")
+vim.keymap.set("i", "<A-BS>", "<C-w>")
+vim.keymap.set("i", "<A-Del>", "<C-o>de")
