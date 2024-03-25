@@ -10,7 +10,8 @@ local function format_cmd(cmd)
         prepend = "bash -c "
     end
 
-    return prepend .. cmd
+    return cmd
+    -- return prepend .. cmd
 end
 
 toggleterm.setup({
