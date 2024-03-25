@@ -9,8 +9,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  { 'numToStr/Comment.nvim', opts = {} },
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  { 'numToStr/Comment.nvim',    opts = {} },
+  {                   -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -22,7 +22,7 @@ require('lazy').setup {
       },
     },
   },
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
@@ -164,6 +164,12 @@ require('lazy').setup {
       'L3MON4D3/LuaSnip',
       'SmiteshP/nvim-navic',
     },
+  },
+  {
+    "smjonas/inc-rename.nvim",
+    config = function()
+      require("inc_rename").setup()
+    end,
   },
   {
     'someone-stole-my-name/yaml-companion.nvim',
