@@ -10,6 +10,9 @@ vim.opt.relativenumber = true
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
 
+-- shell option for windows
+vim.opt.shellcmdflag = "-c"
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
