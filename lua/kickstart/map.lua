@@ -65,3 +65,5 @@ vim.keymap.set('n', '<leader>O', ':BufferLineMoveNext<cr>',
 vim.keymap.set('n', '<leader>q', ':bd<cr>', { desc = 'Delete buffer without changing window layout' })
 vim.keymap.set('n', '<leader>Q', ':bd!<cr>', { desc = 'Force delete buffer without changing window layout' })
 vim.keymap.set('n', '<leader>0', ':%bd|e#|bd#<cr>', { desc = 'Close all buffers except current' })
+vim.keymap.set('n', '<leader>w', ':w<cr>', { desc = 'Save Buffer' })
+vim.keymap.set('n', '<leader>W', ':w|bd<cr>', { desc = 'Save and Delete Buffer' })
