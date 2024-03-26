@@ -52,3 +52,16 @@ vim.keymap.set("n", "<leader>hs", ":split<CR>")
 vim.keymap.set("n", "yY", ":%y+<CR>")
 vim.keymap.set("i", "<A-BS>", "<C-w>")
 vim.keymap.set("i", "<A-Del>", "<C-o>de")
+
+-- buffers
+vim.keymap.set('n', '<leader>i', ':BufferLineCyclePrev<cr>',
+  { desc = 'Cycle through buffers left. (Mnemonic: overlaps with jumplist navigation <C-i>)' })
+vim.keymap.set('n', '<leader>o', ':BufferLineCycleNext<cr>',
+  { desc = 'Cycle through buffers right. (Mnemonic: overlaps with jumplist navigation <C-o>)' })
+vim.keymap.set('n', '<leader>I', ':BufferLineMovePrev<cr>',
+  { desc = 'Move current buffer to the left in the bufferline' })
+vim.keymap.set('n', '<leader>O', ':BufferLineMoveNext<cr>',
+  { desc = 'Move current buffer to the right in the bufferline' })
+vim.keymap.set('n', '<leader>q', ':bd<cr>', { desc = 'Delete buffer without changing window layout' })
+vim.keymap.set('n', '<leader>Q', ':bd!<cr>', { desc = 'Force delete buffer without changing window layout' })
+vim.keymap.set('n', '<leader>0', ':%bd|e#|bd#<cr>', { desc = 'Close all buffers except current' })
