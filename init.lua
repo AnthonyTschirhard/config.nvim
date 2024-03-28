@@ -1,8 +1,8 @@
 vim.g.have_nerd_font = false
-require 'kickstart.map'
 require 'kickstart.opt'
-require 'kickstart.autocmd'
 require 'kickstart.lazy'
+require 'kickstart.map'
+require 'kickstart.autocmd'
 require 'kickstart.highlight'
 
 require 'plugins.telescope'
