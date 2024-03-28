@@ -104,6 +104,7 @@ vim.keymap.set({ "n", "i", "v" }, "<F11>", function() dap.step_into() end)
 vim.keymap.set({ "n", "i", "v" }, "<F12>", function() dap.step_out() end)
 vim.keymap.set({ "n", "i", "v" }, "<F9>", function() breakpoints.toggle_breakpoint() end)
 vim.keymap.set({ "n", "i", "v" }, "<C-F9>", function() breakpoints.set_conditional_breakpoint() end)
+vim.keymap.set({ "n" }, "<leader>xb", function() dap.clear_breakpoints() end)
 vim.keymap.set({ "n", "i", "v" }, "<S-F9>", function() dap.set_breakpoint(nil, nil, vim.fn.input('[Log message] > ')) end)
 
 -- debugger signs
