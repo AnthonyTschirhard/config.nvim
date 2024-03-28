@@ -193,6 +193,12 @@ require('lazy').setup {
     -- use opts = {} for passing setup options
     -- this is equalent to setup({}) function
   },
+  {
+    "danymat/neogen",
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
+  },
 
   -- visual information
   {
