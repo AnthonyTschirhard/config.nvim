@@ -190,6 +190,12 @@ require('lazy').setup {
     },
   },
   -- text editing
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {}
+  },
   'mbbill/undotree',
   'mg979/vim-visual-multi',
   'dhruvasagar/vim-table-mode',
