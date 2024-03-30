@@ -136,6 +136,15 @@ require('lazy').setup {
   },
   { 'raimon49/requirements.txt.vim' },
   'norcalli/nvim-colorizer.lua',
+
+  -- file explorer
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
   -- code highlight/completion
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   'folke/neodev.nvim',
