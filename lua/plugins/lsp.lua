@@ -10,6 +10,7 @@ lsp.ensure_installed({
     "sqlls",
     "lemminx",
     "yamlls",
+    "lua_ls",
 })
 
 lsp.on_attach(function(client, bufnr)
