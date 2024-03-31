@@ -240,7 +240,9 @@ require('lazy').setup {
   'rcarriga/nvim-notify',
   'lukas-reineke/indent-blankline.nvim',
   'petertriho/nvim-scrollbar',
+
   -- debugging & testing
+  { "nvim-neotest/nvim-nio" },
   {
     'rcarriga/nvim-dap-ui',
     dependencies = {
