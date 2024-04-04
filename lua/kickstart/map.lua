@@ -67,3 +67,4 @@ vim.keymap.set('n', '<leader>Q', ':bd!<cr>', { desc = 'Force delete buffer witho
 vim.keymap.set('n', '<leader>0', ':%bd|e#|bd#<cr>', { desc = 'Close all buffers except current' })
 vim.keymap.set('n', '<leader>w', ':w<cr>', { desc = 'Save Buffer' })
 vim.keymap.set('n', '<leader>W', ':w|bd<cr>', { desc = 'Save and Delete Buffer' })
+vim.keymap.set('n', '<leader>cp', ':let @+ = expand("%:p")<cr>', { desc = '[C]opy absolute [P]ath' })
