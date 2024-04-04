@@ -275,6 +275,11 @@ require('lazy').setup {
   -- version control
   'tpope/vim-fugitive',
   'tveskag/nvim-blame-line',
+  -- tasks
+  {
+    'stevearc/overseer.nvim',
+    opts = {},
+  },
   -- terminal
   'fcusson/toggleterm.nvim',
   'edluffy/hologram.nvim',
