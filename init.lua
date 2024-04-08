@@ -1,4 +1,4 @@
-vim.g.have_nerd_font = false
+-- vim.g.have_nerd_font = false
 require 'kickstart.opt'
 require 'kickstart.lazy'
 require 'kickstart.map'
@@ -17,7 +17,7 @@ require 'plugins.files'
 require 'plugins.hologram'
 require 'plugins.lsp'
 require 'plugins.lualine'
-require 'plugins.motions'
+-- require 'plugins.motions'
 require 'plugins.navbuddy'
 require 'plugins.neoclip'
 require 'plugins.neogen'
