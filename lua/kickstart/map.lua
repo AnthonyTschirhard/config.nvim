@@ -50,6 +50,7 @@ vim.keymap.set("n", "<leader>hs", ":split<CR>")
 
 -- text edition
 vim.keymap.set("n", "yY", ":%y+<CR>")
+vim.keymap.set("n", "<A-BS>", "ciw")
 vim.keymap.set("i", "<A-BS>", "<C-w>")
 vim.keymap.set("i", "<A-Del>", "<C-o>de")
 
@@ -62,7 +63,8 @@ vim.keymap.set('n', '<leader>I', ':BufferLineMovePrev<cr>',
   { desc = 'Move current buffer to the left in the bufferline' })
 vim.keymap.set('n', '<leader>O', ':BufferLineMoveNext<cr>',
   { desc = 'Move current buffer to the right in the bufferline' })
-vim.keymap.set('n', '<leader>q', ':bd<cr>', { desc = 'Delete buffer without changing window layout' })
+vim.keymap.set('n', '<leader>q', ':bp<bar>sp<bar>bn<bar>bd<CR>',
+  { desc = 'Delete buffer without changing window layout' })
 vim.keymap.set('n', '<leader>Q', ':bd!<cr>', { desc = 'Force delete buffer without changing window layout' })
 vim.keymap.set('n', '<leader>0', ':%bd|e#|bd#<cr>', { desc = 'Close all buffers except current' })
 vim.keymap.set('n', '<leader>w', ':w<cr>', { desc = 'Save Buffer' })
