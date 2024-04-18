@@ -39,9 +39,14 @@ vim.keymap.set('n', '<leader>s/', function()
 end, { desc = '[S]earch [/] in Open Files' })
 
 -- Shortcut for searching your neovim configuration files
-vim.keymap.set('n', '<leader>sn', function()
+vim.keymap.set('n', '<leader>sc', function()
   builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = '[S]earch [N]eovim files' })
+
+-- Shortcut for searching your notes
+vim.keymap.set('n', '<leader>sn', function()
+  builtin.find_files { cwd = "Sources/notes" }
+end, { desc = '[S]earch [N]otes' })
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
