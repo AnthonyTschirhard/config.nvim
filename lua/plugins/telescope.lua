@@ -56,6 +56,7 @@ local telescope = require 'telescope'
 local ignore_patterns = {
   '^%.venv/',
   '^%.git/',
+  '^%htmlcov/',
   '__pycache__',
   '^%.aws-sam/',
 }
@@ -64,6 +65,7 @@ if vim.fn.has 'win32' == 1 then
   ignore_patterns = {
     '^%.venv\\',
     '^%.git\\',
+    '^%htmlcov\\',
     '^%.aws%-sam\\',
     '__pycache__',
   }
