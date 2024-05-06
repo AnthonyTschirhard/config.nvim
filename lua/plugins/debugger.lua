@@ -32,7 +32,7 @@ dapui.setup({
                 },
             },
             position = "left",
-            size = 60
+            size = 0.3
         },
         {
             elements = {
