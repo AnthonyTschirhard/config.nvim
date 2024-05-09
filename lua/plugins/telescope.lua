@@ -54,22 +54,22 @@ local telescope = require 'telescope'
 
 -- set ignore_patterns
 local ignore_patterns = {
-  '^%.venv/',
-  '^%.git/',
-  '^%htmlcov/',
+  '.venv/.*',
+  '.git/.*',
+  '.htmlcov/.*',
   '__pycache__',
-  '^%.aws-sam/',
+  '.aws-sam/.*',
 }
 
-if vim.fn.has 'win32' == 1 then
-  ignore_patterns = {
-    '^%.venv\\',
-    '^%.git\\',
-    '^%htmlcov\\',
-    '^%.aws%-sam\\',
-    '__pycache__',
-  }
-end
+-- if vim.fn.has 'win32' == 1 then
+--   ignore_patterns = {
+--     '^%.venv\\',
+--     '^%.git\\',
+--     '^%htmlcov\\',
+--     '^%.aws%-sam\\',
+--     '__pycache__',
+--   }
+-- end
 
 local actions = require "telescope.actions"
 telescope.setup {
@@ -90,7 +90,7 @@ telescope.setup {
 
         ["<CR>"] = actions.select_default,
         ["<C-h>"] = actions.select_horizontal,
-        ["<C-x>"] = actions.select_vertical,
+        ["<NL>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
         ["<C-u>"] = actions.preview_scrolling_up,
