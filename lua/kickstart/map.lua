@@ -41,8 +41,8 @@ vim.keymap.set({ 'n', 'v' }, '<A-j>', 'b', { desc = 'Backward one word' })
 vim.keymap.set({ 'n', 'v' }, '<A-k>', 'w', { desc = 'Forward one word' })
 vim.keymap.set({ 'i' }, '<A-j>', '<Esc>Bi', { desc = 'Forward one word' })
 vim.keymap.set({ 'i' }, '<A-k>', '<ESC><Space>Wi', { desc = 'Forward one word' })
-vim.keymap.set({ 'n', 'v' }, '<C-k>', '30k', { desc = 'Page up' })
-vim.keymap.set({ 'n', 'v' }, '<C-j>', '30j', { desc = 'Page down' })
+vim.keymap.set({ 'n', 'v' }, '<S-k>', '30k', { desc = 'Page up' })
+vim.keymap.set({ 'n', 'v' }, '<S-j>', '30j', { desc = 'Page down' })
 
 -- split windows
 vim.keymap.set("n", "<leader>vs", ":vs<CR>")
