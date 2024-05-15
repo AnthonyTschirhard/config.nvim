@@ -65,6 +65,24 @@ lsp_config.yamlls.setup({
     },
 })
 
+lsp_config.jsonls.setup({
+    settings = {
+        json = {
+            schemas = require('schemastore').json.schemas {
+                extra = {
+                    {
+                        description = 'Amazon State Language JSON schema',
+                        fileMatch = { '*.asl.json' },
+                        name = 'asl.json',
+                        url = 'https://raw.githubusercontent.com/fcusson/schemas/main/asl.json',
+                    }
+                }
+            },
+            validate = { enable = true },
+        }
+    }
+})
+
 lsp.setup()
 
 local cmp = require("cmp")
