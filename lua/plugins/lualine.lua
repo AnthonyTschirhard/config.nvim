@@ -124,10 +124,10 @@ lualine.setup {
             'branch',
             'diff',
             'diagnostics',
-            {
-                radon_score,
-                color = function(section) return radon_color() end,
-            }
+            -- {
+            --     radon_score,
+            --     color = function(section) return radon_color() end,
+            -- }
         },
         lualine_c = { 'filename', session_name },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
