@@ -318,5 +318,8 @@ require('lazy').setup {
       { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
-  }
+  },
+
+  -- AWS
+  { 'kiran94/s3edit.nvim',  config = true, cmd = "S3Edit" },
 }

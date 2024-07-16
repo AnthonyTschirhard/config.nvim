@@ -6,6 +6,7 @@ require 'kickstart.autocmd'
 require 'kickstart.highlight'
 
 require 'plugins.telescope'
+require 'plugins.aws'
 require 'plugins.blankline'
 require 'plugins.bufferline'
 require 'plugins.clipboard'
