@@ -153,7 +153,6 @@ require('lazy').setup {
   'jidn/vim-dbml',
   {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
     dependencies = {
       {
         'neovim/nvim-lspconfig',
