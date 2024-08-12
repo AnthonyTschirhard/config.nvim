@@ -130,14 +130,6 @@ require('lazy').setup {
       'nvim-tree/nvim-web-devicons',
     },
   },
-  {
-    'SmiteshP/nvim-navbuddy',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'SmiteshP/nvim-navic',
-      'MunifTanjim/nui.nvim',
-    },
-  },
   { 'raimon49/requirements.txt.vim' },
   'norcalli/nvim-colorizer.lua',
 
@@ -167,6 +159,7 @@ require('lazy').setup {
               'SmiteshP/nvim-navic',
               'MunifTanjim/nui.nvim',
             },
+            opts = { lsp = { auto_attach = true } }
           },
         },
       },
