@@ -150,19 +150,7 @@ require('lazy').setup {
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
-      {
-        'neovim/nvim-lspconfig',
-        dependencies = {
-          {
-            'SmiteshP/nvim-navbuddy',
-            dependencies = {
-              'SmiteshP/nvim-navic',
-              'MunifTanjim/nui.nvim',
-            },
-            opts = { lsp = { auto_attach = true } }
-          },
-        },
-      },
+      'neovim/nvim-lspconfig',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'hrsh7th/nvim-cmp',
