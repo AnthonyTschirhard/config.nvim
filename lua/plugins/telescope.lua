@@ -45,7 +45,7 @@ end, { desc = '[S]earch [N]eovim files' })
 
 -- Shortcut for searching your notes
 vim.keymap.set('n', '<leader>sn', function()
-  builtin.find_files { cwd = "Sources/notes" }
+  builtin.find_files { cwd = "~/Sources/notes" }
 end, { desc = '[S]earch [N]otes' })
 
 -- [[ Configure Telescope ]]
