@@ -1,16 +1,19 @@
-local lsp = require("lsp-zero").preset({})
+local lsp = require("lsp-zero")
 local navic = require("nvim-navic")
 local lsp_config = require("lspconfig")
 
-lsp.ensure_installed({
-    "marksman",
-    "bashls",
-    "pylsp",
-    "jsonls",
-    "sqlls",
-    "lemminx",
-    "yamlls",
-    "lua_ls",
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+      "marksman",
+      "bashls",
+      "pylsp",
+      "jsonls",
+      "sqlls",
+      "lemminx",
+      "yamlls",
+      "lua_ls",
+  },
 })
 
 lsp.on_attach(function(client, bufnr)
