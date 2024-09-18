@@ -22,27 +22,28 @@ return {
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Add your own debuggers here
-    'leoluz/nvim-dap-go',
+    'mfussenegger/nvim-dap-python',
   },
   keys = function(_, keys)
     local dap = require 'dap'
     local dapui = require 'dapui'
     return {
       -- Basic debugging keymaps, feel free to change to your liking!
-      { '<F5>', dap.continue, desc = 'Debug: Start/Continue' },
-      { '<F1>', dap.step_into, desc = 'Debug: Step Into' },
-      { '<F2>', dap.step_over, desc = 'Debug: Step Over' },
-      { '<F3>', dap.step_out, desc = 'Debug: Step Out' },
-      { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+      { '<F5>',  dap.continue,          desc = 'Debug: Start/Continue' },
+      { '<F11>', dap.step_into,         desc = 'Debug: Step Into' },
+      { '<F10>', dap.step_over,         desc = 'Debug: Step Over' },
+      { '<F12>', dap.step_out,          desc = 'Debug: Step Out' },
+      { '<F9>',  dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
-        '<leader>B',
+        'S-F9',
         function()
           dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
         end,
         desc = 'Debug: Set Breakpoint',
       },
+      { '<C-F9>', dap.clear_breakpoints, desc = 'Clear Breakpoints' },
       -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-      { '<F7>', dapui.toggle, desc = 'Debug: See last session result.' },
+      { '<F7>',   dapui.toggle,          desc = 'Debug: See last session result.' },
       unpack(keys),
     }
   end,
@@ -101,5 +102,10 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+
+    -- Python specific config
+    local on_linux = vim.loop.os_uname().sysname == "Linux"
+    local debugpy_path = on_linux and "~/.virtualenvs/debugpy/bin/python" or "~/.virtualenvs/debugpy/Scripts/python.exe"
+    require("dap-python").setup(debugpy_path)
   end,
 }
