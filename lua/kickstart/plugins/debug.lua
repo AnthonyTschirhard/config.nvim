@@ -29,6 +29,7 @@ return {
     local dapui = require 'dapui'
     return {
       -- Basic debugging keymaps, feel free to change to your liking!
+      { '<F4>',  dap.close,             desc = 'Debug: Start/Continue' },
       { '<F5>',  dap.continue,          desc = 'Debug: Start/Continue' },
       { '<F11>', dap.step_into,         desc = 'Debug: Step Into' },
       { '<F10>', dap.step_over,         desc = 'Debug: Step Over' },
@@ -95,13 +96,13 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
-    require('dap-go').setup {
-      delve = {
-        -- On Windows delve must be run attached or it crashes.
-        -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
-        detached = vim.fn.has 'win32' == 0,
-      },
-    }
+    -- require('dap-go').setup {
+    --   delve = {
+    --     -- On Windows delve must be run attached or it crashes.
+    --     -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
+    --     detached = vim.fn.has 'win32' == 0,
+    --   },
+    -- }
 
     -- Python specific config
     local on_linux = vim.loop.os_uname().sysname == "Linux"
