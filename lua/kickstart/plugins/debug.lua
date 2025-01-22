@@ -24,17 +24,19 @@ return {
     -- Add your own debuggers here
     'mfussenegger/nvim-dap-python',
   },
+
   keys = function(_, keys)
     local dap = require 'dap'
     local dapui = require 'dapui'
     return {
       -- Basic debugging keymaps, feel free to change to your liking!
-      { '<F4>',  dap.close,             desc = 'Debug: Start/Continue' },
-      { '<F5>',  dap.continue,          desc = 'Debug: Start/Continue' },
-      { '<F11>', dap.step_into,         desc = 'Debug: Step Into' },
-      { '<F10>', dap.step_over,         desc = 'Debug: Step Over' },
-      { '<F12>', dap.step_out,          desc = 'Debug: Step Out' },
-      { '<F9>',  dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+      { '<F4>',   dap.terminate,         desc = 'Debug: Start/Continue' },
+      { '<F5>',   dap.continue,          desc = 'Debug: Start/Continue' },
+      { '<C-F5>', dap.run_to_cursor,     desc = 'Debug: Run To Cursor' },
+      { '<F11>',  dap.step_into,         desc = 'Debug: Step Into' },
+      { '<F10>',  dap.step_over,         desc = 'Debug: Step Over' },
+      { '<F12>',  dap.step_out,          desc = 'Debug: Step Out' },
+      { '<F9>',   dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
         'S-F9',
         function()
@@ -48,6 +50,7 @@ return {
       unpack(keys),
     }
   end,
+
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
@@ -94,6 +97,20 @@ return {
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+    -- debugger signs
+    vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'ErrorMsg', linehl = '', numhl = '' })
+    vim.fn.sign_define('DapBreakpointCondition', { text = '󱎖', texthl = 'DiffChange', linehl = '', numhl = '' })
+    vim.fn.sign_define('DapLogPoint', { text = '󱨧', texthl = 'Directory', linehl = '', numhl = '' })
+    vim.fn.sign_define(
+      "DapStopped",
+      {
+        text = '',
+        texthl = "WarningMsg",
+        linehl = "DebugActiveLine",
+        numhl = "DebugActiveLine"
+      }
+    )
 
     -- Install golang specific config
     -- require('dap-go').setup {
