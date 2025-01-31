@@ -18,10 +18,5 @@ return {
 		vim.keymap.set("n", "<leader>fls", ":FlutterRestart<CR>", { desc = "[Fl]utter re[S]tart" })
 
 		require("telescope").load_extension("flutter")
-		-- vim.keymap.set(
-		-- 	"n",
-		-- 	"<leader>su",
-		-- 	require("telescope").extensions.flutter.commands
-		-- 	{ desc = "[S]earch Fl[u]tter" })
 	end,
 }
