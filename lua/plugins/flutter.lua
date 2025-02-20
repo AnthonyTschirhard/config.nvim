@@ -12,12 +12,13 @@ return {
     -- alternatively you can override the default configs
 
     require("flutter-tools").setup({})
-    vim.keymap.set("n", "<leader>flr", ":FlutterRun<CR>", { desc = "[Fl]utter [R]un" })
+    require("telescope").load_extension("flutter")
+
+    vim.keymap.set("n", "<leader>flr", ":FlutterRun --no-enable-impeller<CR>", { desc = "[Fl]utter [R]un" })
     vim.keymap.set("n", "<leader>fle", ":FlutterEmulators<CR>", { desc = "[Fl]utter [E]mulators" })
     vim.keymap.set("n", "<leader>fld", ":FlutterDevices<CR>", { desc = "[Fl]utter [D]evices" })
     -- vim.keymap.set("n", "<leader>flo", ":FlutterReload<CR>", { desc = "[Fl]utter [R]eload" })
     vim.keymap.set("n", "<leader>fls", ":FlutterRestart<CR>", { desc = "[Fl]utter re[S]tart" })
-
-    require("telescope").load_extension("flutter")
+    vim.keymap.set("n", "<leader>flc", ":Telescope flutter commands<CR>", { desc = "[Fl]utter [C]ommands" })
   end,
 }
