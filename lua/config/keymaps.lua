@@ -5,6 +5,8 @@
 -- Navigation
 vim.keymap.set({ "n", "v" }, "<A-j>", "b", { desc = "Backward one word" })
 vim.keymap.set({ "n", "v" }, "<A-k>", "w", { desc = "Forward one word" })
+vim.keymap.set({ "n", "v" }, "<C-A-j>", "<C-d>", { desc = "Go down" })
+vim.keymap.set({ "n", "v" }, "<C-A-k>", "<C-u>", { desc = "Go up" })
 
 -- text edition
 vim.keymap.set("n", "yY", ":%y+<CR>")
