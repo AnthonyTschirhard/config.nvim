@@ -24,8 +24,15 @@ return {
             command = paths.flutter_bin,
             args = { "debug-adapter" },
           }
-          dap.configurations.dart = {}
-          require("dap.ext.vscode").load_launchjs()
+          dap.configurations.dart = {
+            {
+              type = "dart",
+              request = "launch",
+              name = "Launch Dart Program",
+              program = "${workspaceFolder}/lib/main.dart",
+              cwd = "${workspaceFolder}",
+            },
+          }
         end,
       },
     })
@@ -36,6 +43,7 @@ return {
     vim.keymap.set("n", "<leader>fle", ":FlutterEmulators<CR>", { desc = "[Fl]utter [E]mulators" })
     vim.keymap.set("n", "<leader>fld", ":FlutterDevices<CR>", { desc = "[Fl]utter [D]evices" })
     vim.keymap.set("n", "<leader>fls", ":FlutterRestart<CR>", { desc = "[Fl]utter re[S]tart" })
+    vim.keymap.set("n", "<leader>flq", ":FlutterQuit<CR>", { desc = "[Fl]utter [Q]uit" })
     vim.keymap.set("n", "<leader>flc", ":Telescope flutter commands<CR>", { desc = "[Fl]utter [C]ommands" })
   end,
 }
